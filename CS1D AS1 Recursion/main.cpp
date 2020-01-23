@@ -54,6 +54,7 @@ int main()
 	}
 	cout << endl << "-------------------------" << endl << endl;
 
+
 	system("pause");
 	return 0;
 }
@@ -82,8 +83,10 @@ bool PalindromeRecursion(const std::string& input, int front, int back)
 
 	while (validChar == false)
 	{
-		if (input[front] < '0' || (input[front] > '9' && input[front] < 'A') ||
-			(input[front] > 'Z' && input[front] < 'a') || input[front] > 'z')
+		if (input[front] < '0' ||
+			(input[front] > '9' && input[front] < 'A') ||
+			(input[front] > 'Z' && input[front] < 'a') ||
+			input[front] > 'z')
 		{
 			front++;
 		}
@@ -92,8 +95,10 @@ bool PalindromeRecursion(const std::string& input, int front, int back)
 			validChar = true;
 		}
 
-		if (input[front] < '0' || (input[front] > '9' && input[front] < 'A') ||
-			(input[front] > 'Z' && input[front] < 'a') || input[front] > 'z')
+		if (input[back] < '0' ||
+			(input[back] > '9' && input[back] < 'A') ||
+			(input[back] > 'Z' && input[back] < 'a') ||
+			input[back] > 'z')
 		{
 			back--;
 			validChar = false;
@@ -136,14 +141,30 @@ void PrintStringPositions(const std::string& input, int front, int back)
 
 	if ((front - back) == 0)
 	{
-		cout << " | " << input << " | " << endl;
+		cout << " | " << input << " | ";
+		if (toupper(input[front]) == toupper(input[back]))
+		{
+			cout << " MATCH" << endl;
+		}
+		else
+		{
+			cout << " NO MATCH" << endl;
+		}
 		cout << "   " << std::string(front, ' ') << '^' << endl;
 	}
 	else
 	{
-		cout << " | " << input << " | " << endl;
+		cout << " | " << input << " | ";
+		if (toupper(input[front]) == toupper(input[back]))
+		{
+			cout << " MATCH" << endl;
+		}
+		else
+		{
+			cout << " NO MATCH" << endl;
+		}
 		cout << "   " << std::string(front, ' ') << '^'
-			<< std::string(back - front - 1, ' ') << '^' << endl;
+			<< std::string((back - front) - 1, ' ') << '^' << endl;
 	}
 
 

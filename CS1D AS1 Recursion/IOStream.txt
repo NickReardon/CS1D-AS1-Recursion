@@ -1,51 +1,154 @@
 ****************************************************************************
-* PROGRAMMED BY : Nick Reardon and Danin Namiranian
+* PROGRAMMED BY : Nick Reardon
 * CLASS         : CS1D
 * SECTION       : MW - 2:30p
-* Lab #1        : Templates
+* Assignment #1 : Recursion
 ****************************************************************************
 
-                              Lab #1 - Templates
+                           Assignment #1 - Recursion
 
-  This program will generate 15 random 3 digit numbers and
-  store them in a vector. Then it will:
-    - Sort the numbers
-    - Reverse the digits in each number
-        - Store the reversed numbers in a new vector
-        - Find the some of the 3 digits of each numbers
-        - Store the sums in a new vector
-    - Print all 3 vectors
+    Write a recursive function that takes a string as an argument and
+returns a TRUE if the string is a palindrome otherwise FALSE is
+returned.  A palindrome is a string that reads the same forward
+and backward (dad, mom, radar).  Test with a main program that
+calls the function.  The main function could solicit for input and
+terminate after receiving an EOF or one can store the strings in a
+vector or array.
 
-      Notes:
-        - Numbers less than 100, will display with
-          leading zeroes (eg. 009, rather than just 9)
-        - Sums will be displayed associated with the
-          original number
+    The recursive function should ignore white spaces, capital letters
+(case insensitive), and punctuation. For example: ôA man a plan a
+canal Panamaö would be a palindrome.
 
+    -Use paragraphing and comment each logical block of source code.
+    -Do not use global variables. Your output should be descriptive.
+
+Use the following input:
+A man a plan a canal Panama
+The rain in Spain
+No lemon, no melon
+radar
+CS1D
+Was it a cat I saw?
+Racecar
+Saddleback
+dad
+
+Due January 22nd
 ****************************************************************************
 
- ** Populating with random  numbers
+   ** Populating vector with strings read from file
+   ** Testing each string in the vector for palindrome
 
- ** Sorting vectors
+-------------------------
 
- ** Reversing digits and storing in new vector
+ | A man a plan a canal Panama |  MATCH
+   ^                         ^
+ | A man a plan a canal Panama |  MATCH
+     ^                      ^
+ | A man a plan a canal Panama |  MATCH
+      ^                    ^
+ | A man a plan a canal Panama |  MATCH
+       ^                  ^
+ | A man a plan a canal Panama |  MATCH
+         ^               ^
+ | A man a plan a canal Panama |  MATCH
+           ^            ^
+ | A man a plan a canal Panama |  MATCH
+            ^         ^
+ | A man a plan a canal Panama |  MATCH
+             ^       ^
+ | A man a plan a canal Panama |  MATCH
+              ^     ^
+ | A man a plan a canal Panama |  MATCH
+                ^  ^
+ | A man a plan a canal Panama |  MATCH
+                  ^
+ This IS a palindrome
 
- ** Summing the digits and storing in new vector
+-------------------------
 
-Original  Reversed
-103       301       Sum of the digits of 103 is 4
-185       581       Sum of the digits of 185 is 14
-271       172       Sum of the digits of 271 is 10
-321       123       Sum of the digits of 321 is 6
-370       073       Sum of the digits of 370 is 10
-377       773       Sum of the digits of 377 is 17
-467       764       Sum of the digits of 467 is 17
-522       225       Sum of the digits of 522 is 9
-640       046       Sum of the digits of 640 is 10
-642       246       Sum of the digits of 642 is 12
-647       746       Sum of the digits of 647 is 17
-656       656       Sum of the digits of 656 is 17
-816       618       Sum of the digits of 816 is 15
-961       169       Sum of the digits of 961 is 16
-994       499       Sum of the digits of 994 is 22
+ | The rain in Spain |  NO MATCH
+   ^               ^
+ This is NOT a palindrome
+
+-------------------------
+
+ | No lemon, no melon |  MATCH
+   ^                ^
+ | No lemon, no melon |  MATCH
+    ^              ^
+ | No lemon, no melon |  MATCH
+      ^           ^
+ | No lemon, no melon |  MATCH
+       ^         ^
+ | No lemon, no melon |  MATCH
+        ^       ^
+ | No lemon, no melon |  MATCH
+         ^    ^
+ | No lemon, no melon |  MATCH
+          ^  ^
+ This IS a palindrome
+
+-------------------------
+
+ | radar |  MATCH
+   ^   ^
+ | radar |  MATCH
+    ^ ^
+ | radar |  MATCH
+     ^
+ This IS a palindrome
+
+-------------------------
+
+ | CS1D |  NO MATCH
+   ^  ^
+ This is NOT a palindrome
+
+-------------------------
+
+ | Was it a cat I saw? |  MATCH
+   ^                ^
+ | Was it a cat I saw? |  MATCH
+    ^              ^
+ | Was it a cat I saw? |  MATCH
+     ^            ^
+ | Was it a cat I saw? |  MATCH
+       ^        ^
+ | Was it a cat I saw? |  MATCH
+        ^     ^
+ | Was it a cat I saw? |  MATCH
+          ^  ^
+ | Was it a cat I saw? |  MATCH
+            ^
+ This IS a palindrome
+
+-------------------------
+
+ | Racecar |  MATCH
+   ^     ^
+ | Racecar |  MATCH
+    ^   ^
+ | Racecar |  MATCH
+     ^ ^
+ | Racecar |  MATCH
+      ^
+ This IS a palindrome
+
+-------------------------
+
+ | Saddleback |  NO MATCH
+   ^        ^
+ This is NOT a palindrome
+
+-------------------------
+
+ | dad |  MATCH
+   ^ ^
+ | dad |  MATCH
+    ^
+ This IS a palindrome
+
+-------------------------
+
 Press any key to continue . . .
