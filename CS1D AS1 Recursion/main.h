@@ -17,7 +17,6 @@
 //Program Specific
 #include <fstream>
 #include <vector>
-#endif // _HEADER_H_
 
 
 // Setup function for PalindromeRecursion
@@ -40,3 +39,5 @@ bool PalindromeRecursion(const std::string& input, int front, int back);
 // Indicates two given indices unless both indices match
 // No change to given string
 void PrintStringPositions(const std::string& input, int front, int back);
+
+#endif // _HEADER_H_
